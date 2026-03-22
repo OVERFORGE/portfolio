@@ -95,17 +95,19 @@ const Homepage = () => {
           animate={hidden ? "hidden" : "visible"}
           transition={{ duration: 0.35, ease: "easeInOut" }}
           className="section w-[100vw] sm:w-full px-6 fixed top-0 left-0 z-[9]">
-          <div className='w-full flex sm:flex items-center justify-between'>
-            <div className='logo-w-[12vh] sm:w-[16vh] sm:h-[10vh] cursor-pointer z-[9]'>
-              SVG
-            </div>
+          <div className='w-full flex sm:flex items-center justify-end'>
             <div className='hidden md:flex gap-2 items-center z-[9] cursor-pointer'>
               {["Home", "About", "Projects", "Contact"].map((e, i) => (
-                <h4 key={i} className={`${styles.links} h-[3vh] relative py-[2.4vh] px-[2.2vh] text-center flex flex-col font-[Sansita] text-[2.1vh] overflow-hidden font-medium leading-[2.5vh]`}>
-                  <a href="" className={`atag ${styles.atag} relative`}>{e}</a>
-                  <a href="" className={`atag ${styles.atag} relative`}>{e}</a>
-
-                </h4>
+                <div key={i} className="group relative px-[2.2vh] py-[2.4vh] cursor-pointer">
+                  <a href="" className="h-[2.5vh] relative flex font-[Sansita] text-[2.1vh] overflow-hidden font-medium leading-[2.5vh]">
+                    {e.split("").map((char, index) => (
+                      <span key={index} className="relative inline-block transition-transform duration-[0.6s] ease-[cubic-bezier(0.76,0,0.24,1)] group-hover:-translate-y-full" style={{ transitionDelay: `${index * 0.03}s` }}>
+                        <span className="inline-block">{char === " " ? "\u00A0" : char}</span>
+                        <span className="inline-block absolute top-full left-0">{char === " " ? "\u00A0" : char}</span>
+                      </span>
+                    ))}
+                  </a>
+                </div>
               ))}
             </div>
             <BiMenu style={{
@@ -115,8 +117,8 @@ const Homepage = () => {
           </div>
         </motion.div>
         <div className='btmtext absolute z-[4]  bottom-[4%] left-[25%] text-center sm:text-start sm:bottom-[7%] sm:left-8 w-48'>
-          <h1 className='sm:text-[2vh] font-semibold'>
-            We Build big ideas
+          <h1 className='sm:text-[2vh] font-semibold tracking-wide'>
+            I Architect Digital Experiences
           </h1>
         </div>
 
@@ -126,8 +128,8 @@ const Homepage = () => {
 
         <div className='marqueecontainer w-full h-screen relative overflow-hidden'>
           <div className='heading absolute top-[12%] sm:top-[7%] left-1/2 '>
-            <h2 className='toptext text-[2.2vh] font-[Sansita] tracking-wide font-medium text-center'>
-              healthcare, one that is
+            <h2 className='toptext text-[2.2vh] font-[Sansita] tracking-wide font-medium text-center whitespace-nowrap -translate-x-1/2'>
+              seamless, immersive, and built to scale
             </h2>
           </div>
           <div className='slidesm absolute scale-[5] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%]'>
