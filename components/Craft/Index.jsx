@@ -61,26 +61,25 @@ const Craft = () => {
             gsap.utils.toArray('.card-wrapper').forEach((wrapper) => {
                 const card = wrapper.querySelector('.card');
                 gsap.fromTo(card, {
-                    width: "20vw",
-                    backgroundColor: "white",
+                    width: "25vw",
+                    backgroundColor: "var(--cyan)",
                     color: "black",
                 }, {
-                    width: "30vw",
+                    width: "35vw",
                     backgroundColor: "var(--black)",
-                    color: "var(--light)",
+                    color: "var(--cyan)",
                     duration: 0.5,
                     ease: Power4,
                     transformOrigin: "bottom 50%",
                     scrollTrigger: {
                         trigger: wrapper,
-                        start: 'top 50%',
+                        start: 'top 40%',
                         toggleActions: 'play none none reverse',
                     }
                 });
             });
 
-            // Force a recalculation of all triggers after 1 second
-            // to compensate for Custom Fonts/Images loading and causing layout shifts
+
             setTimeout(() => {
                 ScrollTrigger.refresh();
             }, 1000);
@@ -89,10 +88,10 @@ const Craft = () => {
     }, container)
 
     return (
-        <div data-color="white" className="craft section w-full sm:flex gap-x-40 justify-between items-center py-8 sm:px-10 relative ">
-            <div className="ltext sm:sticky sm:top-[10%] left-0 sm:w-1/2">
+        <div data-color="cyan" className="craft section w-full sm:flex gap-x-40 justify-between items-start py-8 sm:px-10 relative ">
+            <div className="ltext sm:sticky sm:top-[25vh] self-start left-0 sm:w-1/2">
                 <p className="ptag font-[Sansita] text-[2.6vh] sm:text-[2.9vh] font-medium leading-[4.4vh] sm:leading-[4.2vh]">
-                    I specialize in building high-performance web applications using modern technologies like Next.js, React, and GSAP. My focus is on creating smooth, interactive user experiences that perfectly balance stunning aesthetics with robust engineering.
+                    I specialize in building high-performance web3 fullstack applications using modern technologies like Next.js, Rust, Solidity, and GSAP. My focus is on creating smooth, interactive user experiences that perfectly balance stunning aesthetics with robust engineering.
                 </p>
                 <h1 className="texthead font-[SansitaReg] text-[5vh] leading-[6vh] sm:text-[9.8vh] sm:leading-[12vh] mt-10 mb-10">
                     Curated Digital
