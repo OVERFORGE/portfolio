@@ -26,16 +26,14 @@ const Real = () => {
             ease: "none",
         }, "start");
 
-        // Dramatically increased the parallax velocity offsets using GSAP relative modifiers for heavily visible floating!
-        tl.to(".plx-fast", {
-            x: "-=120vw",
-            ease: "none",
-        }, "start");
-
-        tl.to(".plx-slow", {
-            x: "+=90vw",
-            ease: "none",
-        }, "start");
+        // Exclusively apply subtle, randomized parallax to specific tagged elements
+        gsap.utils.toArray(".plx").forEach(el => {
+            tl.to(el, {
+                // Generate a subtle random visual drift between -25vw and +25vw relative to the screen
+                x: "-=" + gsap.utils.random(-25, 25) + "vw",
+                ease: "none",
+            }, "start");
+        });
     }, container)
 
     return (
@@ -51,7 +49,7 @@ const Real = () => {
                                 Real Impact
                             </h1>
                         </div>
-                        <div className="image plx-fast absolute w-[20vh] h-[20vh] sm:w-[45vh] sm:h-[45vh] -translate-y-2/5 top-1/2 sm:-translate-y-1/2 translate-x-1/2 right-0">
+                        <div className="image plx absolute w-[20vh] h-[20vh] sm:w-[45vh] sm:h-[45vh] -translate-y-2/5 top-1/2 sm:-translate-y-1/2 translate-x-1/2 right-0">
                             <img src="/assets/img1.png" alt="" className="w-full h-full object-cover rounded-full" />
                         </div>
                     </div>
@@ -59,7 +57,7 @@ const Real = () => {
 
                     <div className="slide w-full flex sm:flex items-center justify-center h-screen flex-shrink-0 relative">
 
-                        <div className="image plx-slow absolute w-[20vh] h-[20vh] sm:w-[40vh] sm:h-[40vh] top-16  -translate-y-1/2 right-1/6 top-1/2 sm:-translate-y-1/2 translate-x-1/12 right-0">
+                        <div className="image  absolute w-[20vh] h-[20vh] sm:w-[40vh] sm:h-[40vh] top-16  -translate-y-1/2 right-1/6 top-1/2 sm:-translate-y-1/2 translate-x-1/12 right-0">
                             <img src="/assets/img2.jpeg" alt="" className="w-full h-full object-cover rounded-full" />
                         </div>
                         <div className="w-[60%] text-center font-[SansitaReg] relative">
@@ -71,19 +69,19 @@ const Real = () => {
                                 Global Web3 Conferences Attended
                             </h3>
                         </div>
-                        <div className="image plx-fast absolute w-[12vh] sm:w-[20vh] sm:h-[20vh] -translate-x-1/2 sm:top-2/3 sm:left-1/4 -translate-x-1/2 ">
+                        <div className="image plx absolute w-[12vh] sm:w-[20vh] sm:h-[20vh] -translate-x-1/2 sm:top-2/3 sm:left-1/4 -translate-x-1/2 ">
                             <img src="/assets/bitcoin-btc-logo.png" alt="" className="w-full h-full object-cover rounded-full" />
                         </div>
-                        <div className="image plx-slow absolute w-[20vh] sm:w-[45vh] sm:h-[45vh] first-letter: sm:bottom-10 sm:right-1/6 right-0 sm:-translate-x-2/3 sm:translate-y-1/2 translate-y-[20vh] ">
+                        <div className="image  absolute w-[20vh] sm:w-[45vh] sm:h-[45vh] first-letter: sm:bottom-10 sm:right-1/6 right-0 sm:-translate-x-2/3 sm:translate-y-1/2 translate-y-[20vh] ">
                             <img src="/assets/img4.JPG" alt="" className="w-full h-full object-cover rounded-full" />
                         </div>
-                        <div className="image plx-fast absolute w-[20vh] top-10 -right-2/3 sm:w-[45vh] sm:h-[45vh] sm:top-1/2 sm:-translate-y-1/2 sm:translate-x-2/12 sm:right-0 ">
+                        <div className="image plx absolute w-[20vh] top-10 -right-2/3 sm:w-[45vh] sm:h-[45vh] sm:top-1/2 sm:-translate-y-1/2 sm:translate-x-2/12 sm:right-0 ">
                             <img src="/assets/img3.jpeg" alt="" className="w-full h-full object-cover rounded-full" />
                         </div>
                     </div>
                     {/* 3rd slide */}
                     <div className="slide w-full h-screen sm:flex items-center justify-center flex-shrink-0 relative">
-                        <div className="image plx-fast absolute w-[20vh] h-[20vh] sm:w-[45vh] sm:h-[45vh] sm:top-20 sm:-translate-x-1/5 bottom-[20vh] right-[20vh] sm:-translate-y-1/2 sm:right-1/6">
+                        <div className="image plx absolute w-[20vh] h-[20vh] sm:w-[45vh] sm:h-[45vh] sm:top-20 sm:-translate-x-1/5 bottom-[20vh] right-[20vh] sm:-translate-y-1/2 sm:right-1/6">
                             <img src="/assets/img5.png" alt="" className="w-full h-full object-cover rounded-full" />
                         </div>
                         <div className="w-[60%] text-center font-[SansitaReg] relative">
@@ -97,16 +95,16 @@ const Real = () => {
                                 Of Social Media Impressions Generated
                             </h3>
                         </div>
-                        <div className="image plx-slow absolute w-[30vh]  sm:w-[60vh] sm:h-[60vh]  translate-y-1/3 bottom-10 right-2/4 sm:-translate-x-1/5 ">
+                        <div className="image  absolute w-[30vh]  sm:w-[60vh] sm:h-[60vh]  translate-y-1/3 bottom-10 right-2/4 sm:-translate-x-1/5 ">
                             <video src="/assets/vid1.mp4" autoPlay loop muted className="w-full h-full object-cover rounded-full" />
                         </div>
-                        <div className="hidden plx-fast sm:inline-block image absolute w-[20vh] sm:w-[50vh] sm:h-[50vh] top-1/2 -translate-y-1/4 translate-x-1/3 right-0">
+                        <div className="hidden plx sm:inline-block image absolute w-[20vh] sm:w-[50vh] sm:h-[50vh] top-1/2 -translate-y-1/4 translate-x-1/3 right-0">
                             <img src="/assets/img6.png" alt="" className="w-full h-full object-cover rounded-full" />
                         </div>
                     </div>
                     {/* 4th slide */}
                     <div className="slide w-full h-screen flex sm:flex items-center justify-center relative flex-shrink-0">
-                        <div className="hidden plx-slow sm:inline-block image absolute w-[20vh] h-[20vh] sm:w-[45vh] sm:h-[45vh] top-24 translate-x-12/12 -translate-y-1/2 right-2/3">
+                        <div className="hidden  sm:inline-block image absolute w-[20vh] h-[20vh] sm:w-[45vh] sm:h-[45vh] top-24 translate-x-12/12 -translate-y-1/2 right-2/3">
                             <video src="/assets/vid5.mp4" autoPlay loop muted className="w-full h-full object-cover rounded-full" />
                         </div>
                         <div className="w-[60%] text-center font-[SansitaReg] relative">
@@ -120,13 +118,13 @@ const Real = () => {
                                 Full-Stack MVPs Shipped & Real-World Dapps Engineered
                             </h3>
                         </div>
-                        <div className="image7 plx-fast absolute sm:w-[45vh] sm:h-[45vh] bottom-0 right-2/4 translate-y-1/2 -translate-x-1/2">
+                        <div className="image7 plx absolute sm:w-[45vh] sm:h-[45vh] bottom-0 right-2/4 translate-y-1/2 -translate-x-1/2">
                             <img src="/assets/img2.jpeg" alt="" className="w-full h-full object-cover rounded-full" />
                         </div>
-                        <div className="image plx-slow absolute top-0 -right-10 w-[20vh] h-[20vh] sm:w-[45vh] sm:h-[45vh] sm:top-0 sm:translate-y-1/5 sm:translate-x-2/3 sm:right-50">
+                        <div className="image  absolute top-0 -right-10 w-[20vh] h-[20vh] sm:w-[45vh] sm:h-[45vh] sm:top-0 sm:translate-y-1/5 sm:translate-x-2/3 sm:right-50">
                             <img src="/assets/img7.png" alt="" className="w-full h-full object-cover rounded-full" />
                         </div>
-                        <div className="image plx-fast absolute w-[15vh] h-[15vh] top-2/3 translate-y-1/5 -translate-x-1/3 righ-1/4">
+                        <div className="image plx absolute w-[15vh] h-[15vh] top-2/3 translate-y-1/5 -translate-x-1/3 righ-1/4">
                             <img src="/assets/ethereum-eth-logo.png" alt="" className="w-full h-full object-cover rounded-full" />
                         </div>
                     </div>
