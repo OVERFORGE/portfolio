@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Homepage from "@/components/Homepage/Index";
 import Craft from "@/components/Craft/Index";
+import Real from "@/components/Real/Index";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -28,7 +29,7 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    const list = document.querySelectorAll(".section");
+    const list = document.querySelectorAll("[data-color]");
     list.forEach(function (e) {
       ScrollTrigger.create({
         trigger: e,
@@ -48,6 +49,7 @@ export default function Home() {
     <div className="section main w-full">
       <Homepage />
       <Craft />
+      <Real />
     </div>
   );
 }

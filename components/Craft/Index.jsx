@@ -72,7 +72,7 @@ const Craft = () => {
                     transformOrigin: "bottom 50%",
                     scrollTrigger: {
                         trigger: card,
-                        start: 'top 60%',
+                        start: 'bottom 80%',
                         toggleActions: 'play none none reverse',
                     }
                 });
@@ -82,7 +82,7 @@ const Craft = () => {
     }, container)
 
     return (
-        <div className="craft section w-full sm:flex gap-x-40 justify-between items-center py-8 sm:px-10 relative ">
+        <div data-color="white" className="craft section w-full sm:flex gap-x-40 justify-between items-center py-8 sm:px-10 relative ">
             <div className="ltext sm:sticky sm:top-[10%] left-0 sm:w-1/2">
                 <p className="ptag font-[Sansita] text-[2.6vh] sm:text-[2.9vh] font-medium leading-[4.4vh] sm:leading-[4.2vh]">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
