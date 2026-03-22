@@ -3,6 +3,7 @@ import Image from "next/image";
 import Homepage from "@/components/Homepage/Index";
 import Craft from "@/components/Craft/Index";
 import Real from "@/components/Real/Index";
+import Preloader from "@/components/Preloader";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -46,10 +47,13 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="section main w-full">
-      <Homepage />
-      <Craft />
-      <Real />
-    </div>
+    <>
+      <Preloader />
+      <div className="section main w-full">
+        <Homepage />
+        <Craft />
+        <Real />
+      </div>
+    </>
   );
 }

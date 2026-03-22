@@ -58,25 +58,32 @@ const Craft = () => {
             });
 
 
-            gsap.utils.toArray('.card').forEach((card) => {
+            gsap.utils.toArray('.card-wrapper').forEach((wrapper) => {
+                const card = wrapper.querySelector('.card');
                 gsap.fromTo(card, {
-                    width: "25vw",
-                    backgroundColor: "black",
-                    color: "white",
+                    width: "20vw",
+                    backgroundColor: "white",
+                    color: "black",
                 }, {
                     width: "30vw",
-                    backgroundColor: "var(--light)",
-                    color: "var(--black)",
+                    backgroundColor: "var(--black)",
+                    color: "var(--light)",
                     duration: 0.5,
                     ease: Power4,
                     transformOrigin: "bottom 50%",
                     scrollTrigger: {
-                        trigger: card,
-                        start: 'bottom 80%',
+                        trigger: wrapper,
+                        start: 'top 50%',
                         toggleActions: 'play none none reverse',
                     }
                 });
             });
+
+            // Force a recalculation of all triggers after 1 second
+            // to compensate for Custom Fonts/Images loading and causing layout shifts
+            setTimeout(() => {
+                ScrollTrigger.refresh();
+            }, 1000);
 
         });
     }, container)

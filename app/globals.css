@@ -77,3 +77,21 @@ body[theme="salmon"] .section {
   background: #888;
   border-radius: 50px;
 }
+
+@font-face {
+  font-family: 'Sansita';
+  src: url('/assets/fonts/font1.ttf');
+
+}
+
+@font-face {
+  font-family: 'SansitaReg';
+  src: url('/assets/fonts/font2.ttf');
+
+}
+
+@font-face {
+  font-family: 'SansitaBold';
+  src: url('/assets/fonts/font3.ttf');
+
+}

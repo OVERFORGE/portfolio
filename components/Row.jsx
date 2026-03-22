@@ -2,11 +2,11 @@ import PropTypes from 'prop-types';
 
 function Row({ translateClass, direction }) {
     const items = [
-        { text: "Founder", image: "img7" },
-        { text: "Developer", image: "img7" },
-        { text: "Freelancer", image: "img7" },
-        { text: "Entrepreneur", image: "img7" },
-        { text: "Product Designer", image: "img7" },
+        { text: "Founder", image: "/assets/founder.png" },
+        { text: "Developer", image: "/assets/developer.png" },
+        { text: "Freelancer", image: "/assets/freelancer.png" },
+        { text: "Entrepreneur", image: "/assets/entrepreneur.png" },
+        { text: "Product Designer", image: "/assets/product_designer.png" },
         { text: "Founder", image: "img7" },
         { text: "Developer", image: "img7" },
         { text: "Freelancer", image: "img7" },
@@ -30,8 +30,8 @@ function Row({ translateClass, direction }) {
                         <h1 className='font-[SansitaBold] text-[6vh] sm:text-[8.4vh] leading-[6vh] sm:leading-[9vh]'  >
                             {items.text}
                         </h1>
-                        <div className='imgdiv w-[5vh] h-[5vh]'>
-                            <img src={items.image} alt="" className='' />
+                        <div className='imgdiv w-[5vh] h-[5vh] rounded-full overflow-hidden'>
+                            <img src={items.image} alt="" className='w-full h-full object-cover' />
                         </div>
                     </div>
                 )
