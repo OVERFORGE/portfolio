@@ -58,20 +58,20 @@ const Preloader = () => {
       <div className="loader-content flex flex-col items-center justify-center gap-6 w-full">
         
         {/* GIF container - Made perfectly circular with a subtle glowing luxury border */}
-        <div className="relative w-24 h-24 sm:w-32 sm:h-32 rounded-full shadow-[0_0_40px_rgba(239,157,113,0.15)] bg-black border border-[--salmon] border-opacity-30 flex items-center justify-center overflow-hidden">
-          <img src="/assets/preloader.gif" alt="" className="w-[90%] h-[90%] object-cover rounded-full filter opacity-90" />
+        <div className="relative w-24 h-24 sm:w-32 sm:h-32 rounded-full shadow-[0_0_40px_rgba(255,116,108,0.4)] bg-black border border-[--salmon] border-opacity-50 flex items-center justify-center overflow-hidden">
+          <img src="/assets/preloader.gif" alt="" className="w-[90%] h-[90%] object-cover rounded-full filter opacity-100 mix-blend-screen" />
         </div>
         
         {/* Progress percentage text matching your Sansita font */}
-        <div className="text-[--salmon] font-[SansitaReg] text-[2.5vh] sm:text-[3vh] tracking-widest font-semibold mt-2">
+        <div className="text-[--salmon] font-[SansitaReg] text-[3vh] sm:text-[4vh] tracking-widest font-bold mt-4 drop-shadow-[0_0_12px_rgba(255,116,108,0.8)]">
             <span ref={percentRef}>0%</span>
         </div>
 
         {/* Progress bar container - Modernized, thickened, glowing */}
-        <div className="w-56 sm:w-72 h-[4px] bg-[#1a1a1a] rounded-full overflow-hidden">
-          <div className="loading-bar w-0 h-full bg-[--salmon] rounded-full shadow-[0_0_15px_var(--salmon)] relative">
+        <div className="w-56 sm:w-[350px] h-[8px] sm:h-[10px] bg-[#1a1a1a] rounded-full overflow-hidden border border-white/5 mt-2 shadow-[0_0_20px_rgba(255,116,108,0.15)]">
+          <div className="loading-bar w-0 h-full bg-[--salmon] rounded-full shadow-[0_0_20px_var(--salmon)] relative">
              {/* Little glowing bright tip inside the bar for extra spice */}
-             <div className="absolute right-0 top-0 h-full w-[15px] bg-white opacity-60 blur-[2px]"></div>
+             <div className="absolute right-0 top-0 h-full w-[25px] bg-white opacity-90 blur-[3px]"></div>
           </div>
         </div>
         

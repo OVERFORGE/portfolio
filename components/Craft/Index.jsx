@@ -60,23 +60,31 @@ const Craft = () => {
 
             gsap.utils.toArray('.card-wrapper').forEach((wrapper) => {
                 const card = wrapper.querySelector('.card');
-                gsap.fromTo(card, {
-                    width: "25vw",
-                    backgroundColor: "var(--cyan)",
-                    color: "black",
-                }, {
-                    width: "35vw",
-                    backgroundColor: "var(--black)",
-                    color: "var(--cyan)",
-                    duration: 0.5,
-                    ease: Power4,
-                    transformOrigin: "bottom 50%",
+                const tl = gsap.timeline({
                     scrollTrigger: {
                         trigger: wrapper,
                         start: 'top 40%',
                         toggleActions: 'play none none reverse',
                     }
                 });
+
+                tl.fromTo(card, {
+                    width: "25vw",
+                }, {
+                    width: "35vw",
+                    duration: 0.5,
+                    ease: Power4,
+                    transformOrigin: "bottom 50%",
+                }, 0);
+                tl.fromTo(card, {
+                    backgroundColor: "var(--cyan)",
+                    color: "black",
+                }, {
+                    backgroundColor: "var(--black)",
+                    color: "var(--cyan)",
+                    duration: 0.05,
+                    ease: "none",
+                }, 0.2);
             });
 
 
