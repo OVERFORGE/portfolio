@@ -97,9 +97,14 @@ const Homepage = () => {
           className="section w-[100vw] sm:w-full px-6 fixed top-0 left-0 z-[9]">
           <div className='w-full flex sm:flex items-center justify-end'>
             <div className='hidden md:flex gap-2 items-center z-[9] cursor-pointer'>
-              {["Home", "About", "Projects", "Contact"].map((e, i) => (
+              {["Home", "About", "Projects", "Resume"].map((e, i) => (
                 <div key={i} className="group relative px-[2.2vh] py-[2.4vh] cursor-pointer">
-                  <a href="" className="h-[2.5vh] relative flex font-[Sansita] text-[2.1vh] overflow-hidden font-medium leading-[2.5vh]">
+                  <a 
+                    href={e === "Resume" ? "/assets/resume.pdf" : `/#${e.toLowerCase()}`}
+                    download={e === "Resume" ? "Resume.pdf" : undefined}
+                    target={e === "Resume" ? "_blank" : undefined}
+                    className="h-[2.5vh] relative flex font-[Sansita] text-[2.1vh] overflow-hidden font-medium leading-[2.5vh]"
+                  >
                     {e.split("").map((char, index) => (
                       <span key={index} className="relative inline-block transition-transform duration-[0.6s] ease-[cubic-bezier(0.76,0,0.24,1)] group-hover:-translate-y-full" style={{ transitionDelay: `${index * 0.03}s` }}>
                         <span className="inline-block">{char === " " ? "\u00A0" : char}</span>
