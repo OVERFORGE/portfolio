@@ -61,6 +61,28 @@ body[theme="salmon"] .section {
   color: var(--dsalmon);
 }
 
+/* Hard-wired GSAP Independent Custom Cursor Variables */
+body[theme="black"] .custom-cursor-bg {
+  background-color: var(--light);
+}
+body[theme="black"] .custom-cursor-text {
+  color: var(--black);
+}
+
+body[theme="cyan"] .custom-cursor-bg {
+  background-color: var(--dcyan); /* Deep elegant dark contrast against cyan natively */
+}
+body[theme="cyan"] .custom-cursor-text {
+  color: var(--cyan);
+}
+
+body[theme="salmon"] .custom-cursor-bg {
+  background-color: var(--light); /* Fresh brilliant light bubble contrasting pastel perfectly */
+}
+body[theme="salmon"] .custom-cursor-text {
+  color: var(--dsalmon);
+}
+
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -90,4 +112,10 @@ body[theme="salmon"] .section {
   font-family: 'SansitaBold';
   src: url('/assets/fonts/font3.ttf');
 
+}
+
+@media (pointer: fine) {
+  * {
+    cursor: none !important;
+  }
 }

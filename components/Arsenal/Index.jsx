@@ -11,22 +11,18 @@ export default function Arsenal() {
 
   // We rotate sequentially through the high-end project/web3 images you provided inside the DOM node spawner!
   const images = [
-    "/assets/img1.png",
-    "/assets/img2.jpeg",
-    "/assets/img3.jpeg",
-    "/assets/img4.JPG",
-    "/assets/img5.png",
-    "/assets/img6.png",
-    "/assets/img7.png",
-    "/assets/bitcoin-btc-logo.png",
-    "/assets/ethereum-eth-logo.png"
+    "/assets/next.js.png",
+    "/assets/rust_logo.png",
+    "/assets/solidity_logo.png",
+    "/assets/cpp_logo.png",
+    "/assets/postgres_logo.png",
+    "/assets/mongo_db_logo.png",
+    "/assets/react_logo.png",
+    "/assets/prisma_orm_logo.png",
+    "/assets/python_logo.png",
   ];
 
   useGSAP(() => {
-    // Epic cinematic "Pull-Through" camera entrance securely locked to the viewport!
-    // As the bottom of this massive section hits the screen bottom, the parent component PINS in place!
-    // The user continues to physically scroll down, but instead of moving down the page, they zoom *into* the container 
-    // while the completely unpinned Terminal gracefully slides up underneath it!
     gsap.to(scaleContainer.current, {
       scrollTrigger: {
         trigger: container.current,
@@ -56,18 +52,28 @@ export default function Arsenal() {
       if (!trailContainer.current) return;
 
       // We bypass React state totally and inject raw DOM nodes for an insane 60+ FPS glitchless framerate.
+      // 1. Create a pristine structural glass card Wrapper ensuring mathematically perfect White Background mapping
+      const wrapper = document.createElement('div');
+      wrapper.className = "absolute flex items-center justify-center p-6 sm:p-10 bg-white rounded-[2rem] shadow-[0_30px_60px_rgba(0,0,0,0.8)] pointer-events-none z-50 border border-black/10";
+      
+      // Inline styles safely guaranteeing viewport scaling dimensions instantly
+      const isMobile = window.innerWidth < 640;
+      wrapper.style.width = isMobile ? "18vh" : "35vh";
+      wrapper.style.height = isMobile ? "25vh" : "45vh";
+      wrapper.style.left = `${x}px`;
+      wrapper.style.top = `${y}px`;
+      wrapper.style.transform = `translate(-50%, -50%) scale(1) rotate(${gsap.utils.random(-15, 15)}deg)`;
+
+      // 2. Inject the native image explicitly contained inside the safe white bounding box
       const img = document.createElement('img');
       img.src = images[currentIndex % images.length];
-      // Inject brutalist shadowing and border radiuses mimicking high-end glass cards
-      img.className = "absolute w-[18vh] sm:w-[35vh] h-[25vh] sm:h-[45vh] object-cover rounded-2xl shadow-[0_30px_60px_rgba(0,0,0,0.8)] pointer-events-none z-50 border border-white/10";
-      img.style.left = `${x}px`;
-      img.style.top = `${y}px`;
-      img.style.transform = "translate(-50%, -50%) scale(1) rotate(" + gsap.utils.random(-15, 15) + "deg)"; // Random tilt!
+      img.className = "w-full h-full object-contain filter drop-shadow-[0_10px_10px_rgba(0,0,0,0.1)]"; // Subtle pop!
+      
+      wrapper.appendChild(img);
+      trailContainer.current.appendChild(wrapper);
 
-      trailContainer.current.appendChild(img);
-
-      // The structural GSAP fade-out physics mapped per element
-      gsap.to(img, {
+      // The structural GSAP fade-out physics mapped per element wrapper
+      gsap.to(wrapper, {
         scale: 0.5,
         opacity: 0,
         y: "+=150", // Drift downwards lazily like dropping physically
@@ -75,8 +81,8 @@ export default function Arsenal() {
         duration: 1.5,
         ease: "power3.out",
         onComplete: () => {
-          if (trailContainer.current?.contains(img)) {
-            trailContainer.current.removeChild(img);
+          if (trailContainer.current?.contains(wrapper)) {
+            trailContainer.current.removeChild(wrapper);
           }
         }
       });
@@ -100,7 +106,7 @@ export default function Arsenal() {
     if (el) {
       el.addEventListener('mousemove', handleMouseMove);
     }
-    
+
     return () => {
       if (el) el.removeEventListener('mousemove', handleMouseMove);
     };
@@ -108,34 +114,34 @@ export default function Arsenal() {
 
   // Structural Brutalist Text
   const stack = [
-    "NEXT.JS", "RUST", "SOLIDITY", "GSAP", "TAILWIND"
+    "NEXT.JS", "RUST", "SOLIDITY", "C++", "POSTGRES"
   ];
 
   return (
     // The outer wrapper explicitly maintains `overflow-hidden` to completely mask the inner zooming container.
     <div ref={container} data-color="black" className="arsenal section w-full min-h-[150vh] relative z-20 bg-transparent overflow-hidden sm:cursor-crosshair selection:bg-transparent">
-      
+
       {/* The isolated scale container that rockets into the camera safely out of document bounds! */}
       <div ref={scaleContainer} className="relative w-full h-full min-h-[150vh] flex flex-col items-center justify-center">
-        
+
         {/* Title */}
         <div className="absolute top-[10%] left-6 sm:left-16 z-30 pointer-events-none">
-           <h1 className="font-[SansitaReg] text-[4vh] sm:text-[6vh] leading-none text-[#aedee0] font-semibold tracking-widest opacity-80 uppercase drop-shadow-[0_0_20px_rgba(174,222,224,0.3)]">
-               The Arsenal
-           </h1>
+          <h1 className="font-[SansitaReg] text-[4vh] sm:text-[6vh] leading-none text-[#aedee0] font-semibold tracking-widest opacity-80 uppercase drop-shadow-[0_0_20px_rgba(174,222,224,0.3)]">
+            The Arsenal
+          </h1>
         </div>
 
         {/* Centerpiece Text Alignment tracking mouse flow directly */}
         <div className="w-full flex flex-col items-center justify-center gap-2 sm:gap-6 z-10 pointer-events-none mix-blend-difference">
-           {stack.map((item, i) => (
-             <h2 key={i} className="font-[SansitaBold] text-[10vh] sm:text-[20vh] text-[#fff] leading-[0.8] tracking-tighter uppercase whitespace-nowrap opacity-90">
-               {item}
-             </h2>
-           ))}
+          {stack.map((item, i) => (
+            <h2 key={i} className="font-[SansitaBold] text-[10vh] sm:text-[20vh] text-[#fff] leading-[0.8] tracking-tighter uppercase whitespace-nowrap opacity-90">
+              {item}
+            </h2>
+          ))}
         </div>
 
         <div className="absolute bottom-[5%] sm:bottom-[10%] text-center text-white tracking-[0.4em] text-xs font-mono pointer-events-none opacity-40 uppercase">
-           Drag Cursor to Illuminate Frameworks
+          Drag Cursor to Illuminate Frameworks
         </div>
 
         {/* Absolute boundary where raw DOM elements are rapidly constructed by JS and destroyed out of state mapping */}

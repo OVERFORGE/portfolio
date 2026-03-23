@@ -8,6 +8,7 @@ import Terminal from "@/components/Terminal/Index";
 import Timeline from "@/components/Timeline/Index";
 import Footer from "@/components/Footer/Index";
 import Preloader from "@/components/Preloader";
+import Cursor from "@/components/Cursor/Index";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -34,10 +35,7 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    // 1. Core ScrollTrigger Sync!
-    // Asynchronously loaded images in earlier components (like Homepage/Craft/Real) will physically push the DOM down. 
-    // If GSAP measures triggers before these images load, the markers are completely misaligned!
-    // Wrapping a root ResizeObserver permanently syncs ScrollTrigger to ANY structural DOM shift!
+
     const resizeObserver = new ResizeObserver(() => {
       ScrollTrigger.refresh();
     });
@@ -72,6 +70,7 @@ export default function Home() {
   return (
     <>
       <Preloader />
+      <Cursor />
       <div className="section main w-full">
         <Homepage />
         <Craft />
