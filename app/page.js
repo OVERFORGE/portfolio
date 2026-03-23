@@ -3,6 +3,10 @@ import Image from "next/image";
 import Homepage from "@/components/Homepage/Index";
 import Craft from "@/components/Craft/Index";
 import Real from "@/components/Real/Index";
+import Arsenal from "@/components/Arsenal/Index";
+import Terminal from "@/components/Terminal/Index";
+import Timeline from "@/components/Timeline/Index";
+import Footer from "@/components/Footer/Index";
 import Preloader from "@/components/Preloader";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
@@ -30,6 +34,15 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
+    // 1. Core ScrollTrigger Sync!
+    // Asynchronously loaded images in earlier components (like Homepage/Craft/Real) will physically push the DOM down. 
+    // If GSAP measures triggers before these images load, the markers are completely misaligned!
+    // Wrapping a root ResizeObserver permanently syncs ScrollTrigger to ANY structural DOM shift!
+    const resizeObserver = new ResizeObserver(() => {
+      ScrollTrigger.refresh();
+    });
+    resizeObserver.observe(document.body);
+
     const list = document.querySelectorAll("[data-color]");
     list.forEach(function (e) {
       ScrollTrigger.create({
@@ -44,6 +57,16 @@ export default function Home() {
         },
       });
     });
+
+    // 2. Extra safety fallbacks for heavy asynchronous media resolution over sluggish client pipes
+    const tc1 = setTimeout(() => ScrollTrigger.refresh(), 500);
+    const tc2 = setTimeout(() => ScrollTrigger.refresh(), 2000);
+
+    return () => {
+      resizeObserver.disconnect();
+      clearTimeout(tc1);
+      clearTimeout(tc2);
+    };
   }, []);
 
   return (
@@ -53,6 +76,10 @@ export default function Home() {
         <Homepage />
         <Craft />
         <Real />
+        <Arsenal />
+        <Terminal />
+        <Timeline />
+        <Footer />
       </div>
     </>
   );
