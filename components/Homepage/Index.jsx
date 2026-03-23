@@ -99,7 +99,7 @@ const Homepage = () => {
             <div className='hidden md:flex gap-2 items-center z-[9] cursor-pointer'>
               {["Home", "About", "Projects", "Resume"].map((e, i) => (
                 <div key={i} className="group relative px-[2.2vh] py-[2.4vh] cursor-pointer">
-                  <a 
+                  <a
                     href={e === "Resume" ? "/assets/resume.pdf" : `/#${e.toLowerCase()}`}
                     download={e === "Resume" ? "Resume.pdf" : undefined}
                     target={e === "Resume" ? "_blank" : undefined}

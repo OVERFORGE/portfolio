@@ -55,7 +55,7 @@ export default function Arsenal() {
       // 1. Create a pristine structural glass card Wrapper ensuring mathematically perfect White Background mapping
       const wrapper = document.createElement('div');
       wrapper.className = "absolute flex items-center justify-center p-6 sm:p-10 bg-white rounded-[2rem] shadow-[0_30px_60px_rgba(0,0,0,0.8)] pointer-events-none z-50 border border-black/10";
-      
+
       // Inline styles safely guaranteeing viewport scaling dimensions instantly
       const isMobile = window.innerWidth < 640;
       wrapper.style.width = isMobile ? "18vh" : "35vh";
@@ -68,7 +68,7 @@ export default function Arsenal() {
       const img = document.createElement('img');
       img.src = images[currentIndex % images.length];
       img.className = "w-full h-full object-contain filter drop-shadow-[0_10px_10px_rgba(0,0,0,0.1)]"; // Subtle pop!
-      
+
       wrapper.appendChild(img);
       trailContainer.current.appendChild(wrapper);
 
