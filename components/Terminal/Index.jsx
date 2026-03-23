@@ -68,6 +68,7 @@ const MagneticButton = ({ children, onClick }) => {
 export default function Terminal() {
   const container = useRef(null);
   const terminalWrapperRef = useRef(null);
+  const terminalInnerRef = useRef(null);
   const terminalRef = useRef(null);
   const inputRef = useRef(null);
   const scrollBodyRef = useRef(null); // Strictly isolates scrolling inside the terminal container!
@@ -89,7 +90,8 @@ export default function Terminal() {
 
   useGSAP(() => {
     // 1. Sleek entrance mapping the terminal fading upwards
-    gsap.fromTo(terminalWrapperRef.current, 
+    // Mathematically isolated onto the inner struct to prevent GSAP property overriding!
+    gsap.fromTo(terminalInnerRef.current, 
       { scale: 0.9, opacity: 0, y: 50 },
       {
         scrollTrigger: {
@@ -106,9 +108,7 @@ export default function Terminal() {
     );
 
     // 2. The breathtaking 3D 180-degree flip exit!
-    // As requested, instead of pinning it, we map it organically to the scroll!
-    // As the user scrolls past the terminal, it shrinks, flips backwards infinitely into darkness,
-    // revealing the Timeline SVG immediately beneath it flawlessly.
+    // Safely targeting the massive outer wrapper independently so scaling and opacity don't collide!
     gsap.to(terminalWrapperRef.current, {
       scrollTrigger: {
         trigger: container.current,
@@ -164,9 +164,12 @@ export default function Terminal() {
       </div>
 
       {/* Wrapping the Terminal and Button together seamlessly so they rotate 3D cohesively! */}
-      <div ref={terminalWrapperRef} className="w-full flex flex-col sm:flex-row items-center justify-center gap-12 sm:gap-20 will-change-transform z-20 px-6 sm:px-10">
+      <div ref={terminalWrapperRef} className="w-full flex justify-center will-change-transform z-20 px-6 sm:px-10">
           
-          {/* Extreme Premium Terminal Window Box */}
+          {/* Internal wrapper splitting the GSAP property loads natively avoiding collision overrides */}
+          <div ref={terminalInnerRef} className="w-full flex flex-col sm:flex-row items-center justify-center gap-12 sm:gap-20">
+              
+              {/* Extreme Premium Terminal Window Box */}
           <div 
             ref={terminalRef} 
             onClick={() => inputRef.current?.focus()}
@@ -213,6 +216,8 @@ export default function Terminal() {
                 DOWNLOAD RESUME
              </MagneticButton>
           </a>
+
+          </div>
 
       </div>
 
