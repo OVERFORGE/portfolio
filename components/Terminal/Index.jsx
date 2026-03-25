@@ -50,14 +50,15 @@ const MagneticButton = ({ children, onClick }) => {
     <div 
       ref={btnRef} 
       onClick={onClick}
-      className="relative px-8 py-4 sm:px-12 sm:py-5 bg-[#0A0A0A]/50 border border-[--salmon] rounded-full flex items-center justify-center cursor-pointer text-[--salmon] font-sans tracking-[0.2em] font-bold text-[1.2vh] sm:text-[1.5vh] z-30 hover:text-black transition-colors duration-500 overflow-hidden group shrink-0 backdrop-blur-md"
+      className="relative px-8 py-4 sm:px-12 sm:py-5 bg-[#0A0A0A]/50 border border-[var(--salmon)] rounded-full flex items-center justify-center cursor-pointer text-[var(--salmon)] font-sans tracking-[0.2em] font-bold text-[1.2vh] sm:text-[1.5vh] z-30 transition-all duration-500 overflow-hidden group shrink-0 backdrop-blur-md hover:border-transparent"
     >
-      {/* Sleek Structural Hover Swoosh matching high-end agency designs */}
-      <div className="absolute inset-0 bg-[--salmon] translate-y-full group-hover:translate-y-0 transition-transform duration-[600ms] ease-[cubic-bezier(0.19,1,0.22,1)] z-0"></div>
+      {/* Sleek Structural Hover Swoosh enforcing absolute explicitly mapped Salmon color */}
+      <div className="absolute inset-0 bg-[var(--salmon)] translate-y-full group-hover:translate-y-0 transition-transform duration-[600ms] ease-[cubic-bezier(0.19,1,0.22,1)] z-0"></div>
       
-      <span className="relative z-10 flex items-center justify-center gap-3 w-full">
+      {/* Hover transforms text to crisp white for absolute contrast against the pastel salmon background! */}
+      <span className="relative z-10 flex items-center justify-center gap-3 w-full group-hover:text-white transition-colors duration-500">
         {children}
-        <svg className="w-4 h-4 sm:w-5 sm:h-5 transform -translate-y-[2px] transition-transform duration-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg className="w-4 h-4 sm:w-5 sm:h-5 transform -translate-y-[2px] transition-transform duration-500 group-hover:-translate-y-1 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
         </svg>
       </span>
