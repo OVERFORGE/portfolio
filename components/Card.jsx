@@ -22,7 +22,7 @@ function Card() {
             title: "The Executioners ",
             description: "A Web3 growth marketing firm that helps crypto projects scale their user base and engagement.",
             image: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-full h-full opacity-90"><path d="M10 90l80-80M90 10v40M90 10H50M20 80l15-15 15 15 35-35"/><circle cx="20" cy="80" r="4" fill="currentColor"/><circle cx="35" cy="65" r="4" fill="currentColor"/><circle cx="50" cy="80" r="4" fill="currentColor"/><circle cx="85" cy="45" r="4" fill="currentColor"/></svg>`,
-            link: "https://theexecutioners.in"
+            link: "https://the-executioners.onrender.com/"
         }
     ]
     return (
