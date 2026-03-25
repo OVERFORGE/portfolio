@@ -210,11 +210,11 @@ export default function Terminal() {
             </div>
           </div>
 
-          {/* Cuberto Styled Magnetic Resume Download Button */}
-          {/* Automatically injects a native browser highly-accessible anchor download! */}
-          <a href="/assets/resume.pdf" download="Resume.pdf" target="_blank" rel="noopener noreferrer" className="pointer-events-auto shrink-0 outline-none">
+          {/* Cuberto Styled Magnetic Resume Button */}
+          {/* We strictly removed the HTML5 'download' attribute here. Forcing downloads via Next.js directly often corrupts PDF byte-streams in Chrome/Safari downloading it as a 0-byte or blank file. Instead, we let the browser native PDF viewer open it in a _blank tab safely, allowing the user to view/save it uncorrupted! */}
+          <a href="/assets/resume.pdf" target="_blank" rel="noopener noreferrer" className="pointer-events-auto shrink-0 outline-none">
              <MagneticButton>
-                DOWNLOAD RESUME
+                OPEN RESUME
              </MagneticButton>
           </a>
 
