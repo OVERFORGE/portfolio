@@ -13,7 +13,8 @@
 }
 
 /* Force absolute pitch-black on the ultimate root element natively killing Light Mode white out! */
-html, body {
+html,
+body {
   background-color: var(--background);
   color: var(--foreground);
 }
@@ -71,20 +72,25 @@ body[theme="salmon"] .section {
 body[theme="black"] .custom-cursor-bg {
   background-color: var(--light);
 }
+
 body[theme="black"] .custom-cursor-text {
   color: var(--black);
 }
 
 body[theme="cyan"] .custom-cursor-bg {
-  background-color: var(--dcyan); /* Deep elegant dark contrast against cyan natively */
+  background-color: var(--dcyan);
+  /* Deep elegant dark contrast against cyan natively */
 }
+
 body[theme="cyan"] .custom-cursor-text {
   color: var(--cyan);
 }
 
 body[theme="salmon"] .custom-cursor-bg {
-  background-color: var(--light); /* Fresh brilliant light bubble contrasting pastel perfectly */
+  background-color: var(--light);
+  /* Fresh brilliant light bubble contrasting pastel perfectly */
 }
+
 body[theme="salmon"] .custom-cursor-text {
   color: var(--dsalmon);
 }
