@@ -114,7 +114,7 @@ export default function Arsenal() {
 
   // Structural Brutalist Text
   const stack = [
-    "NEXT.JS", "RUST", "SOLIDITY", "C++", "POSTGRES"
+    "NEXT.JS", "SOLIDITY", "C++", "POSTGRES", "REACT NATIVE"
   ];
 
   return (

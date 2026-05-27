@@ -57,13 +57,13 @@ const Real = () => {
 
                     <div className="slide w-full flex sm:flex items-center justify-center h-screen flex-shrink-0 relative">
 
-                        <div className="image  absolute w-[20vh] h-[20vh] sm:w-[40vh] sm:h-[40vh] top-16  -translate-y-1/2 right-1/6 top-1/2 sm:-translate-y-1/2 translate-x-1/12 right-0">
+                        <div className="image  absolute w-[20vh] h-[20vh] sm:w-[40vh] sm:h-[40vh] top-16  -translate-y-1/2 right-2/6 top-1/2 sm:-translate-y-1/2 translate-x-1/12 right-0">
                             <img src="/assets/img2.jpeg" alt="" className="w-full h-full object-cover rounded-full" />
                         </div>
                         <div className="w-[60%] text-center font-[SansitaReg] relative">
-                            <h3 className="font-[Sansita] sm:w-1/3 text-left font-semibold tracking-tight text-[2.2vh] sm:absolute sm:top-0 sm:left-0 z-[3] -translate-y-2/3 sm:-translate-y-1/2 sm:-translate-x-1/3">Connecting with industry leaders across Abu Dhabi, Dubai, Bangalore, and Delhi. Building a limitless worldwide network.</h3>
+                            <h3 className="font-[Sansita] sm:w-1/3 text-left font-semibold tracking-tight text-[2.2vh] sm:absolute sm:top-0 sm:left-18 z-[3] -translate-y-2/3 sm:-translate-y-1/2 sm:-translate-x-1/3">Connecting with industry leaders across Abu Dhabi, Dubai, Bangalore, and Delhi. Building a limitless worldwide network.</h3>
                             <h1 className="font-semibold text-[10vh] sm:text-[20vh] leading-none text-white">
-                                10+
+                                5+
                             </h1>
                             <h3 className="text-[2vh] sm:text-[4.5vh] font-semibold sm:leading-[6.5vh] mt-4">
                                 Global Web3 Conferences Attended
@@ -95,10 +95,10 @@ const Real = () => {
                                 Of Social Media Impressions Generated
                             </h3>
                         </div>
-                        <div className="image  absolute w-[30vh]  sm:w-[60vh] sm:h-[60vh]  translate-y-1/3 bottom-10 right-2/4 sm:-translate-x-1/5 ">
+                        <div className="image  absolute w-[30vh]  sm:w-[60vh] sm:h-[60vh]  translate-y-1/3 bottom-10 right-8/12 sm:-translate-x-1/5 ">
                             <video src="/assets/vid1.mp4" autoPlay loop muted className="w-full h-full object-cover rounded-full" />
                         </div>
-                        <div className="hidden plx sm:inline-block image absolute w-[20vh] sm:w-[50vh] sm:h-[50vh] top-1/2 -translate-y-1/4 translate-x-1/3 right-0">
+                        <div className="hidden plx sm:inline-block image absolute w-[20vh] sm:w-[50vh] sm:h-[50vh] top-1/2 -translate-y-1/4 translate-x-1/3 -right-24">
                             <img src="/assets/img6.png" alt="" className="w-full h-full object-cover rounded-full" />
                         </div>
                     </div>
@@ -112,16 +112,16 @@ const Real = () => {
                                 From executing 5+ robust freelance contracts to acting as a core founding team member for 5+ emerging brands.
                             </h3>
                             <h1 className="font-semibold text-[10vh] sm:text-[20vh] leading-none text-white">
-                                20+
+                                10+
                             </h1>
                             <h3 className="text-[3.1vh] leading-[3.4vh] sm:text-[4.5vh] font-semibold sm:leading-[5.5vh] mt-4">
                                 Full-Stack MVPs Shipped & Real-World Dapps Engineered
                             </h3>
                         </div>
-                        <div className="image7 plx absolute sm:w-[45vh] sm:h-[45vh] bottom-0 right-2/4 translate-y-1/2 -translate-x-1/2">
+                        <div className="image7 plx absolute sm:w-[45vh] sm:h-[45vh] bottom-0 right-2/6 translate-y-1/2 -translate-x-1/2">
                             <img src="/assets/img2.jpeg" alt="" className="w-full h-full object-cover rounded-full" />
                         </div>
-                        <div className="image  absolute top-0 -right-10 w-[20vh] h-[20vh] sm:w-[45vh] sm:h-[45vh] sm:top-0 sm:translate-y-1/5 sm:translate-x-2/3 sm:right-50">
+                        <div className="image  absolute top-0 -right-10 w-[20vh] h-[20vh] sm:w-[45vh] sm:h-[45vh] sm:top-0 sm:translate-y-1/5 sm:translate-x-2/3 sm:right-100">
                             <img src="/assets/img7.png" alt="" className="w-full h-full object-cover rounded-full" />
                         </div>
                         <div className="image plx absolute w-[15vh] h-[15vh] top-2/3 translate-y-1/5 -translate-x-1/3 righ-1/4">
